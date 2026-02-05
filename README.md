@@ -81,7 +81,27 @@ If they're in performance mode, disengage or address lurkers. If learning mode, 
 
 ## Usage
 
-### Load the ruleset
+### Claude Code Skills
+
+If you're using Claude Code in this repo, two skills are available:
+
+**`/analyze [argument]`** — Analyze someone else's argument
+```
+/analyze "AI tools are just hype. My friend tried Copilot and it sucked.
+Anyone who disagrees is naive or paid by Microsoft."
+```
+
+Returns: engagement score, orientation, fallacies detected, verdict (engage/don't engage), and strategy.
+
+**`/self-check [your draft]`** — Critique your own argument before posting
+```
+/self-check "Remote work is obviously better. Studies show productivity
+increases, and anyone who wants RTO is a control freak manager."
+```
+
+Returns: fallacy risks, strongest counterargument, evidence strength, verdict (strong/decent/weak/don't post), and suggestions.
+
+### Programmatic Use
 
 ```python
 import json
@@ -93,30 +113,35 @@ for fallacy in ruleset["fallacies"]:
     print(f"{fallacy['id']}: {fallacy['name']}")
 ```
 
-### Agent integration
+### Agent Integration
 
 For each argument your agent handles:
 
 1. **Extract** the main claim(s) and premises
-2. **Pattern match** against `patterns` for candidate fallacies
-3. **Verify** using `detection_hints` to reduce false positives
-4. **Report** with a diagnostic using `rewrite_hint`
+2. **Score engagement** using signals from `engagement.json`
+3. **Check orientation** — performance mode vs learning mode
+4. **Detect fallacies** using patterns and hints from `fallacies.json`
+5. **Make a call** — engage, engage for lurkers, clarify, or don't engage
 
-Example output:
-> ⚠️ **Possible hasty generalization**: Concluding about *all* AI coding agents from a single team's experience. Consider scoping the claim to match the evidence.
+The framework makes judgments, not suggestions. If the tool says "don't engage," that's the recommendation.
 
 ## Files
 
 - `PHILOSOPHY.md` — **Read first.** Epistemic foundations for AI argumentation
 - `WHY-ONLINE-ARGUING.md` — The neuroscience: why internet arguments are performative peacocking
 - `REFERENCES.md` — Foundational books: Kahneman, Cialdini, Tetlock, Walton, Sagan, and 30+ more
-- `engagement.json` — Engagement scoring signals and workflow (now includes performance vs learning detection)
+- `CONTRIBUTING.md` — How to contribute (and why core 12 stays at 12)
+- `engagement.json` — Engagement scoring signals and workflow (includes performance vs learning detection)
 - `engagement-schema.json` — JSON Schema for engagement scoring
 - `fallacies.json` — The 12 fallacy definitions with patterns, hints, and examples
 - `fallacy-schema.json` — JSON Schema for fallacy definitions
 - `examples/` — Common argument domains with resolvability analysis
   - `argument-domains.json` — Structured data on 30+ classic debates
   - `README.md` — Quick reference by category
+- `.claude/skills/` — Claude Code skills
+  - `analyze/` — `/analyze` command for evaluating others' arguments
+  - `self-check/` — `/self-check` command for critiquing your own
+  - `cleanup/` — `/cleanup` command for repo maintenance
 
 ## Contributing
 
