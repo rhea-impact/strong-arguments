@@ -94,6 +94,7 @@ Example output:
 ## Files
 
 - `PHILOSOPHY.md` — **Read first.** Epistemic foundations for AI argumentation
+- `REFERENCES.md` — Foundational books: Kahneman, Cialdini, Tetlock, Walton, Sagan, and 30+ more
 - `engagement.json` — Engagement scoring signals and workflow
 - `engagement-schema.json` — JSON Schema for engagement scoring
 - `fallacies.json` — The 12 fallacy definitions with patterns, hints, and examples
@@ -117,10 +118,20 @@ MIT
 
 ## References
 
+See [REFERENCES.md](REFERENCES.md) for the complete reading list (35+ books).
+
+**Quick picks:**
+- Kahneman — *Thinking, Fast and Slow* (cognitive biases)
+- Cialdini — *Influence* (persuasion tactics to recognize)
+- Tetlock — *Superforecasting* (calibration)
+- Sagan — *The Demon-Haunted World* (scientific skepticism)
+- Walton — *Informal Logic* (fallacy theory)
+- Mercier & Sperber — *The Enigma of Reason* (why this is hard)
+
+**Online:**
 - [Scribbr: Logical Fallacies](https://www.scribbr.com/fallacies/logical-fallacy/)
-- [Philosophy A Level: Informal Fallacies](https://philosophyalevel.com/posts/informal-fallacies-examples/)
 - [IEP: Fallacies](https://iep.utm.edu/fallacy/)
-- [SynthCog: Logical Fallacies](https://www.synthcog.blog/p/logical-fallacies)
+- [LessWrong Sequences](https://www.lesswrong.com/rationality)
 
 ---
 
