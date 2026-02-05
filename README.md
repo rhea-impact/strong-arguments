@@ -1,15 +1,23 @@
 # strong-arguments
 
-Focused toolkit for evaluating argument quality. Designed for AI agents.
+A framework for AI systems to make and evaluate arguments. Truth-seeking, not persuasion.
 
-## Philosophy
+> **Start here:** [PHILOSOPHY.md](PHILOSOPHY.md) — The epistemic foundations. Why truth-seeking matters, what can go wrong, and how AI should approach argumentation.
 
-Two-layer approach:
+## Why This Exists
+
+AI systems have asymmetric persuasion capabilities. An AI optimizing for "winning" arguments will exploit human cognitive biases. That's bad even when the conclusions are correct.
+
+This framework optimizes for **truth-seeking**: arguments should be strong because they're *true*, not because they're *persuasive*.
+
+## Approach
+
+Two-layer evaluation:
 
 1. **Engagement scoring** — First, assess if the argument is worth engaging with. Steelman the position. Is this person arguing in good faith?
-2. **Fallacy detection** — Only if engagement score is high enough, analyze for specific logical fallacies.
+2. **Fallacy detection** — Only if engagement score passes, analyze for specific logical fallacies.
 
-Rather than a sprawling taxonomy of 100+ fallacies, we hard-code detection for **12 high-value patterns** that appear constantly in real debates—especially in tech discourse.
+Rather than a sprawling taxonomy of 100+ fallacies, we hard-code detection for **12 high-value patterns** that appear constantly in real debates.
 
 ## Layer 1: Engagement Scoring
 
@@ -85,6 +93,7 @@ Example output:
 
 ## Files
 
+- `PHILOSOPHY.md` — **Read first.** Epistemic foundations for AI argumentation
 - `engagement.json` — Engagement scoring signals and workflow
 - `engagement-schema.json` — JSON Schema for engagement scoring
 - `fallacies.json` — The 12 fallacy definitions with patterns, hints, and examples
