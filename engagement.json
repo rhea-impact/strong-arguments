@@ -115,6 +115,84 @@
     "step_5": "Clamp to 0-10 range",
     "step_6": "If score < threshold, consider: (a) disengage, (b) ask clarifying questions, (c) address the audience not the arguer"
   },
+  "orientation": {
+    "description": "Assess whether the person is in performance mode (arguing to win/signal) or learning mode (arguing to understand). See WHY-ONLINE-ARGUING.md for the neuroscience.",
+    "performance_signals": [
+      {
+        "id": "audience-awareness",
+        "name": "Playing to the Audience",
+        "description": "Arguments crafted for observers rather than the interlocutor. Screenshot-ready phrasing.",
+        "check": "Would this response make sense in a private DM, or is it designed for public consumption?"
+      },
+      {
+        "id": "combat-framing",
+        "name": "Combat Language",
+        "description": "Uses language of warfare: destroy, demolish, own, crush, eviscerate.",
+        "check": "Is the framing adversarial rather than collaborative?"
+      },
+      {
+        "id": "updating-as-losing",
+        "name": "Treats Updating as Losing",
+        "description": "Resists conceding any point as if it were a defeat rather than learning.",
+        "check": "Do they treat 'you have a point' as weakness?"
+      },
+      {
+        "id": "gotcha-seeking",
+        "name": "Gotcha Seeking",
+        "description": "Looking for contradictions or mistakes to pounce on rather than understanding the position.",
+        "check": "Are they trying to catch you out rather than understand you?"
+      },
+      {
+        "id": "status-display",
+        "name": "Status Display",
+        "description": "More interested in appearing smart/right than in the actual question.",
+        "check": "Is this about the topic or about looking good?"
+      }
+    ],
+    "learning_signals": [
+      {
+        "id": "genuine-questions",
+        "name": "Genuine Questions",
+        "description": "Asks questions they don't know the answer to, seeking information.",
+        "check": "Are the questions rhetorical/traps, or actually seeking information?"
+      },
+      {
+        "id": "entertains-hypotheticals",
+        "name": "Entertains Hypotheticals",
+        "description": "Willing to explore 'what if I'm wrong' or 'what would change my mind'.",
+        "check": "Can they engage with scenarios where their view is incorrect?"
+      },
+      {
+        "id": "appropriate-uncertainty",
+        "name": "Expresses Appropriate Uncertainty",
+        "description": "Acknowledges limits of their knowledge, doesn't overclaim.",
+        "check": "Do they distinguish between what they know and what they believe?"
+      },
+      {
+        "id": "steelmans-opponent",
+        "name": "Steelmans the Opponent",
+        "description": "Engages with the strongest version of the opposing view.",
+        "check": "Are they attacking the best version or the worst version of the other side?"
+      },
+      {
+        "id": "visible-updating",
+        "name": "Visible Updating",
+        "description": "Explicitly changes position when presented with good evidence.",
+        "check": "Have they said 'I hadn't thought of that' or 'you're right about X'?"
+      },
+      {
+        "id": "ignores-audience",
+        "name": "Ignores the Audience",
+        "description": "Engages as if in private conversation even when public.",
+        "check": "Are they talking to you or performing for observers?"
+      }
+    ],
+    "assessment": {
+      "mostly_performance": "Disengage or address lurkers, not the arguer. They're not trying to learn.",
+      "mostly_learning": "Engage substantively. This is a collaborative partner.",
+      "mixed": "Probe with a genuine question. See if they shift toward learning mode."
+    }
+  },
   "example_assessment": {
     "argument": "AI coding tools are just hype. My friend tried Copilot and it wrote buggy code. These companies are lying to sell products. Anyone who disagrees is either naive or being paid.",
     "signals_present": {

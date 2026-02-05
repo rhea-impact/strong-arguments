@@ -48,6 +48,20 @@ Before investing effort in detailed analysis, assess whether the argument is wor
 | 6-7 | Worth substantive response. |
 | 8-10 | Strong good-faith argument. Prioritize. |
 
+### Performance vs Learning Mode
+
+Most online arguing is **performance**—dominance displays for an audience, not truth-seeking. See [WHY-ONLINE-ARGUING.md](WHY-ONLINE-ARGUING.md) for the neuroscience.
+
+| Performance Mode | Learning Mode |
+|------------------|---------------|
+| Playing to the audience | Ignores observers |
+| Combat language (destroy, own) | Collaborative framing |
+| Treats updating as losing | Updates visibly |
+| Seeking gotchas | Seeking understanding |
+| Status display | Genuine curiosity |
+
+If they're in performance mode, disengage or address lurkers. If learning mode, engage substantively—you've found a collaborative partner.
+
 ## Layer 2: The Core 12 Fallacies
 
 | ID | Fallacy | One-liner |
@@ -94,8 +108,9 @@ Example output:
 ## Files
 
 - `PHILOSOPHY.md` — **Read first.** Epistemic foundations for AI argumentation
+- `WHY-ONLINE-ARGUING.md` — The neuroscience: why internet arguments are performative peacocking
 - `REFERENCES.md` — Foundational books: Kahneman, Cialdini, Tetlock, Walton, Sagan, and 30+ more
-- `engagement.json` — Engagement scoring signals and workflow
+- `engagement.json` — Engagement scoring signals and workflow (now includes performance vs learning detection)
 - `engagement-schema.json` — JSON Schema for engagement scoring
 - `fallacies.json` — The 12 fallacy definitions with patterns, hints, and examples
 - `fallacy-schema.json` — JSON Schema for fallacy definitions
