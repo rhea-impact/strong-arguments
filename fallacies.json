@@ -1,0 +1,246 @@
+{
+  "$schema": "./fallacy-schema.json",
+  "version": "1.0.0",
+  "fallacies": [
+    {
+      "id": "straw-man",
+      "name": "Straw Man",
+      "description": "Misrepresenting an opponent's position to make it easier to attack (oversimplifying, exaggerating, or changing the claim).",
+      "patterns": [
+        "So you're saying that...",
+        "What they really mean is...",
+        "In other words, you believe..."
+      ],
+      "detection_hints": [
+        "Compare stated position to how it's being characterized",
+        "Look for exaggeration or oversimplification of original claim",
+        "Check if qualifiers or nuance were dropped"
+      ],
+      "example": {
+        "original": "We should add more automated tests to critical paths.",
+        "fallacious": "So you want us to stop shipping features and just write tests all day?"
+      },
+      "rewrite_hint": "Restate the actual position accurately before responding to it."
+    },
+    {
+      "id": "hasty-generalization",
+      "name": "Hasty Generalization",
+      "description": "Drawing a broad conclusion from too few or unrepresentative examples.",
+      "patterns": [
+        "We tried X once and it failed, so X doesn't work",
+        "I know someone who..., therefore all...",
+        "Every time I've seen..."
+      ],
+      "detection_hints": [
+        "Count the examples vs scope of the conclusion",
+        "Check if examples are representative of the population",
+        "Look for words like 'all', 'never', 'always' following limited evidence"
+      ],
+      "example": {
+        "original": "We tried AI coding agents once and the output was buggy.",
+        "fallacious": "AI coding agents don't work and will never be useful."
+      },
+      "rewrite_hint": "Scope the claim to match the evidence: 'In our limited test, we encountered issues with...'"
+    },
+    {
+      "id": "appeal-to-ignorance",
+      "name": "Appeal to Ignorance / Misplaced Burden of Proof",
+      "description": "Treating 'no evidence has been shown' as 'the opposite is true,' or forcing others to disprove an unevidenced claim.",
+      "patterns": [
+        "You can't prove it's not true",
+        "No one has shown otherwise",
+        "Until you prove me wrong..."
+      ],
+      "detection_hints": [
+        "Check who made the initial claim—they bear the burden",
+        "Absence of evidence is not evidence of absence (nor presence)",
+        "Look for demands to prove a negative"
+      ],
+      "example": {
+        "original": "There's no published study showing AI increases developer productivity.",
+        "fallacious": "Therefore AI definitely doesn't increase developer productivity."
+      },
+      "rewrite_hint": "Distinguish between 'unproven' and 'disproven'. State what evidence would be needed."
+    },
+    {
+      "id": "false-analogy",
+      "name": "False Analogy",
+      "description": "Using an analogy where the critical features of the two things differ in relevant ways.",
+      "patterns": [
+        "It's just like...",
+        "Think of it as...",
+        "The same thing happened with..."
+      ],
+      "detection_hints": [
+        "Identify the key properties being compared",
+        "Check if those properties are actually similar in relevant ways",
+        "Ask: do the differences matter more than the similarities?"
+      ],
+      "example": {
+        "original": "AI coding is like hiring a junior developer.",
+        "fallacious": "So we should manage AI tools exactly like we manage junior devs, with standups and 1:1s."
+      },
+      "rewrite_hint": "Specify which aspects of the analogy hold and which don't."
+    },
+    {
+      "id": "false-dilemma",
+      "name": "False Dilemma / Black-and-White Thinking",
+      "description": "Presenting only two options when more exist.",
+      "patterns": [
+        "Either X or Y",
+        "You're either with us or against us",
+        "It's all or nothing",
+        "You have to choose between..."
+      ],
+      "detection_hints": [
+        "Count the options presented",
+        "Ask: are there intermediate positions or third alternatives?",
+        "Look for forced binary framing"
+      ],
+      "example": {
+        "original": "We're discussing AI coding tools.",
+        "fallacious": "Either AI replaces all developers or it's completely useless."
+      },
+      "rewrite_hint": "Identify the spectrum of possibilities between the extremes."
+    },
+    {
+      "id": "circular-reasoning",
+      "name": "Circular Reasoning / Begging the Question",
+      "description": "Assuming what you're trying to prove in your premises.",
+      "patterns": [
+        "X is true because X",
+        "The reason is that it's the way it is",
+        "By definition..."
+      ],
+      "detection_hints": [
+        "Check if the conclusion appears (rephrased) in the premises",
+        "Ask: would someone who doubts the conclusion accept the premises?",
+        "Look for definitions that smuggle in the conclusion"
+      ],
+      "example": {
+        "original": "Is AI a force multiplier for developers?",
+        "fallacious": "AI is not a force multiplier because tools can't multiply productivity."
+      },
+      "rewrite_hint": "Provide independent evidence for premises that doesn't assume the conclusion."
+    },
+    {
+      "id": "appeal-to-authority",
+      "name": "Appeal to Authority / Ipse Dixit",
+      "description": "Treating expert or brand statements as decisive evidence without examining their reasoning or data.",
+      "patterns": [
+        "X said so, therefore it's true",
+        "According to [famous person]...",
+        "The experts agree..."
+      ],
+      "detection_hints": [
+        "Check if the authority is relevant to this specific domain",
+        "Look for the underlying reasoning or data, not just the conclusion",
+        "Ask: is this consensus or one person's opinion?"
+      ],
+      "example": {
+        "original": "Should we adopt this architecture?",
+        "fallacious": "Google uses it, so it must be right for us."
+      },
+      "rewrite_hint": "Cite the reasoning or evidence behind the authority's position, not just their status."
+    },
+    {
+      "id": "ad-hominem",
+      "name": "Ad Hominem / Poisoning the Well",
+      "description": "Attacking the person (motives, character, background) instead of the argument.",
+      "patterns": [
+        "You only say that because...",
+        "Of course they'd say that, they're a...",
+        "What do you know, you're just a..."
+      ],
+      "detection_hints": [
+        "Check if the response addresses the argument or the person",
+        "Look for attacks on motives, credentials, or character",
+        "Ask: even if true about the person, does it affect the argument's validity?"
+      ],
+      "example": {
+        "original": "I think we should consider using Rust for this component.",
+        "fallacious": "You're just saying that because you want to learn Rust. You don't care about the project."
+      },
+      "rewrite_hint": "Address the argument's merits, not the arguer's perceived motives."
+    },
+    {
+      "id": "red-herring",
+      "name": "Red Herring / Changing the Subject",
+      "description": "Introducing an irrelevant issue to distract from the main claim.",
+      "patterns": [
+        "But what about...",
+        "The real issue is...",
+        "Speaking of which..."
+      ],
+      "detection_hints": [
+        "Track the original topic vs where the discussion went",
+        "Ask: does this new point actually address the original claim?",
+        "Look for topic shifts after a difficult question"
+      ],
+      "example": {
+        "original": "This function has a security vulnerability.",
+        "fallacious": "But we should really be talking about the technical debt in the other module."
+      },
+      "rewrite_hint": "Acknowledge the original point before introducing related topics."
+    },
+    {
+      "id": "correlation-causation",
+      "name": "Correlation vs Causation (Cum Hoc / Post Hoc)",
+      "description": "Assuming that because two things co-occur or follow one another, one caused the other.",
+      "patterns": [
+        "After X, Y happened, so X caused Y",
+        "X and Y correlate, so X causes Y",
+        "Every time X, then Y"
+      ],
+      "detection_hints": [
+        "Look for temporal or correlational claims treated as causal",
+        "Ask: could there be a third factor causing both?",
+        "Check for controlled comparisons or just observations"
+      ],
+      "example": {
+        "original": "After we adopted AI tools, our bug count went down.",
+        "fallacious": "AI tools reduced our bugs."
+      },
+      "rewrite_hint": "Note the correlation and identify what would be needed to establish causation."
+    },
+    {
+      "id": "appeal-to-tradition",
+      "name": "Appeal to Tradition / Status Quo Bias",
+      "description": "Arguing something is correct because 'it's how we've always done it' or 'the world currently runs this way.'",
+      "patterns": [
+        "We've always done it this way",
+        "That's how the industry works",
+        "If it ain't broke, don't fix it"
+      ],
+      "detection_hints": [
+        "Check if longevity is the main justification",
+        "Ask: has the context changed since this became tradition?",
+        "Look for resistance to change without substantive reasoning"
+      ],
+      "example": {
+        "original": "Should we try pair programming?",
+        "fallacious": "We've always had individual code ownership. That's how real engineering works."
+      },
+      "rewrite_hint": "Evaluate based on current merits, not historical precedent."
+    },
+    {
+      "id": "equivocation",
+      "name": "Equivocation / Ambiguity",
+      "description": "Using a key term in different senses within the same argument.",
+      "patterns": [
+        "X is Y, and Y is Z, therefore X is Z (where Y means different things)",
+        "Shifting definitions mid-argument"
+      ],
+      "detection_hints": [
+        "Track key terms throughout the argument",
+        "Check if the same word is used with different meanings",
+        "Look for terms like 'productivity', 'intelligence', 'learning' that have multiple senses"
+      ],
+      "example": {
+        "original": "Does AI really 'understand' code?",
+        "fallacious": "AI understands code because it processes it. Humans understand code by processing it. Therefore AI understands code like humans do."
+      },
+      "rewrite_hint": "Define key terms explicitly and use them consistently."
+    }
+  ]
+}

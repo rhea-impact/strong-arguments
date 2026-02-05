@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Engagement Scoring Schema",
+  "description": "Schema for assessing whether an argument merits detailed analysis",
+  "type": "object",
+  "required": ["version", "scoring", "positive_signals", "negative_signals", "workflow"],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scoring": {
+      "type": "object",
+      "required": ["range", "threshold", "interpretation"],
+      "properties": {
+        "range": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "threshold": {
+          "type": "integer"
+        },
+        "interpretation": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "positive_signals": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/signal" }
+    },
+    "negative_signals": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/signal" }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "signal": {
+      "type": "object",
+      "required": ["id", "name", "description", "weight", "check"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer"
+        },
+        "check": {
+          "type": "string",
+          "description": "Question to ask when evaluating if this signal is present"
+        }
+      }
+    }
+  }
+}

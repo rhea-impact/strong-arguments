@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Fallacy Ruleset",
+  "description": "Schema for defining logical fallacy detection rules",
+  "type": "object",
+  "required": ["version", "fallacies"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the ruleset"
+    },
+    "fallacies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/fallacy"
+      }
+    }
+  },
+  "definitions": {
+    "fallacy": {
+      "type": "object",
+      "required": ["id", "name", "description", "patterns", "detection_hints", "example", "rewrite_hint"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "description": "Unique identifier (kebab-case)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name"
+        },
+        "description": {
+          "type": "string",
+          "description": "What this fallacy is and why it's problematic"
+        },
+        "patterns": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Common linguistic patterns that may indicate this fallacy"
+        },
+        "detection_hints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Questions or checks an agent should run to confirm the fallacy"
+        },
+        "example": {
+          "type": "object",
+          "required": ["original", "fallacious"],
+          "properties": {
+            "original": {
+              "type": "string",
+              "description": "The original statement or context"
+            },
+            "fallacious": {
+              "type": "string",
+              "description": "The fallacious response or reframing"
+            }
+          }
+        },
+        "rewrite_hint": {
+          "type": "string",
+          "description": "Guidance for how to fix or avoid this fallacy"
+        }
+      }
+    }
+  }
+}

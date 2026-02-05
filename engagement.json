@@ -1,0 +1,127 @@
+{
+  "$schema": "./engagement-schema.json",
+  "version": "1.0.0",
+  "description": "Engagement scoring: assess whether an argument is worth detailed analysis before investing effort in fallacy detection.",
+  "scoring": {
+    "range": [0, 10],
+    "threshold": 5,
+    "interpretation": {
+      "0-3": "Not engaging in good faith. Likely trolling, venting, or signaling. Don't invest effort.",
+      "4-5": "Borderline. May be frustrated but reachable. Clarify intent before deep analysis.",
+      "6-7": "Reasonable engagement. Worth analyzing and responding substantively.",
+      "8-10": "Strong good-faith argument. Prioritize thoughtful engagement."
+    }
+  },
+  "positive_signals": [
+    {
+      "id": "steelmanable",
+      "name": "Steelmanable Position",
+      "description": "The argument can be reconstructed into a reasonable position that smart people might hold.",
+      "weight": 2,
+      "check": "Can you articulate a version of their argument that you'd have to think hard to refute?"
+    },
+    {
+      "id": "specific-claims",
+      "name": "Specific Claims",
+      "description": "Makes concrete, falsifiable claims rather than vague assertions.",
+      "weight": 2,
+      "check": "Are there specific facts, numbers, or scenarios cited that could be verified or disputed?"
+    },
+    {
+      "id": "acknowledges-tradeoffs",
+      "name": "Acknowledges Tradeoffs",
+      "description": "Recognizes downsides of their position or upsides of opposing views.",
+      "weight": 2,
+      "check": "Do they mention any limitations, costs, or conditions under which they'd be wrong?"
+    },
+    {
+      "id": "responds-to-points",
+      "name": "Responds to Actual Points",
+      "description": "Addresses what was actually said rather than a caricature.",
+      "weight": 1,
+      "check": "Are they engaging with the specific claims made, or arguing past them?"
+    },
+    {
+      "id": "asks-questions",
+      "name": "Asks Clarifying Questions",
+      "description": "Seeks to understand before attacking.",
+      "weight": 1,
+      "check": "Do they ask questions to ensure they understand the position correctly?"
+    },
+    {
+      "id": "updates-on-evidence",
+      "name": "Willing to Update",
+      "description": "Shows signs of changing position when presented with new information.",
+      "weight": 2,
+      "check": "Have they acknowledged any points or modified their stance during the exchange?"
+    }
+  ],
+  "negative_signals": [
+    {
+      "id": "motte-bailey",
+      "name": "Motte-and-Bailey",
+      "description": "Switches between a strong controversial claim (bailey) and a weak defensible claim (motte) when challenged.",
+      "weight": -2,
+      "check": "When pressed, do they retreat to a much weaker claim than they originally made?"
+    },
+    {
+      "id": "goalpost-moving",
+      "name": "Moving Goalposts",
+      "description": "Changes the criteria for what would satisfy them after each point is addressed.",
+      "weight": -2,
+      "check": "Have they repeatedly changed what evidence or argument would convince them?"
+    },
+    {
+      "id": "sealioning",
+      "name": "Sealioning",
+      "description": "Persistent demands for evidence/explanation while ignoring what's provided.",
+      "weight": -2,
+      "check": "Are they asking questions in bad faith, ignoring answers, then asking more?"
+    },
+    {
+      "id": "emotional-escalation",
+      "name": "Emotional Escalation",
+      "description": "Increasing hostility, insults, or dramatic language as the discussion continues.",
+      "weight": -1,
+      "check": "Is the tone getting more aggressive without new substantive content?"
+    },
+    {
+      "id": "gish-gallop",
+      "name": "Gish Gallop",
+      "description": "Overwhelming with many weak arguments rather than defending a few strong ones.",
+      "weight": -1,
+      "check": "Are they throwing out many points without defending any in depth?"
+    },
+    {
+      "id": "kafka-trap",
+      "name": "Kafka Trap",
+      "description": "Any response is taken as proof of guilt ('your denial proves you're defensive').",
+      "weight": -2,
+      "check": "Is there any response you could give that they wouldn't use against you?"
+    },
+    {
+      "id": "pure-signaling",
+      "name": "Pure Signaling",
+      "description": "Argument is performative for an audience rather than aimed at truth-seeking.",
+      "weight": -1,
+      "check": "Are they playing to a crowd rather than engaging with you directly?"
+    }
+  ],
+  "workflow": {
+    "step_1": "Before detailed fallacy analysis, calculate engagement score",
+    "step_2": "Sum positive signals present (each contributes its weight)",
+    "step_3": "Sum negative signals present (each subtracts its weight)",
+    "step_4": "Add base score of 5",
+    "step_5": "Clamp to 0-10 range",
+    "step_6": "If score < threshold, consider: (a) disengage, (b) ask clarifying questions, (c) address the audience not the arguer"
+  },
+  "example_assessment": {
+    "argument": "AI coding tools are just hype. My friend tried Copilot and it wrote buggy code. These companies are lying to sell products. Anyone who disagrees is either naive or being paid.",
+    "signals_present": {
+      "positive": [],
+      "negative": ["hasty-generalization-adjacent", "ad-hominem", "pure-signaling"]
+    },
+    "score": 2,
+    "recommendation": "Low engagement score. Not worth detailed fallacy analysis. If responding, address for lurkers, not the arguer."
+  }
+}
