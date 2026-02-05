@@ -98,6 +98,9 @@ Example output:
 - `engagement-schema.json` — JSON Schema for engagement scoring
 - `fallacies.json` — The 12 fallacy definitions with patterns, hints, and examples
 - `fallacy-schema.json` — JSON Schema for fallacy definitions
+- `examples/` — Common argument domains with resolvability analysis
+  - `argument-domains.json` — Structured data on 30+ classic debates
+  - `README.md` — Quick reference by category
 
 ## Contributing
 

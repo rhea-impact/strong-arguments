@@ -1,0 +1,376 @@
+{
+  "version": "1.0.0",
+  "description": "Common argument domains, categorized by resolvability and typical failure modes",
+  "categories": [
+    {
+      "id": "life-decisions",
+      "name": "Life Decisions",
+      "description": "High-stakes personal choices. Often context-dependent—right answer varies by situation.",
+      "resolvability": "conditional",
+      "domains": [
+        {
+          "id": "rent-vs-buy",
+          "name": "Rent vs Buy",
+          "typical_framing": "Renting is throwing money away vs buying is a trap",
+          "why_it_persists": "Depends heavily on: location, career stability, interest rates, opportunity cost, lifestyle preferences. People argue from their own context as if universal.",
+          "hidden_variables": ["local market conditions", "career mobility needs", "maintenance tolerance", "investment alternatives", "time horizon"],
+          "common_fallacies": ["false-dilemma", "hasty-generalization", "appeal-to-tradition"],
+          "path_to_resolution": "Acknowledge it's a math problem with personal inputs. Run the numbers for your specific situation."
+        },
+        {
+          "id": "public-vs-private-school",
+          "name": "Public vs Private School",
+          "typical_framing": "Private schools are worth any cost vs public schools are fine",
+          "why_it_persists": "Conflates multiple factors: academic outcomes, social environment, values transmission, network effects. Also class signaling.",
+          "hidden_variables": ["specific local school quality", "child's needs", "family values", "financial impact", "peer group effects"],
+          "common_fallacies": ["hasty-generalization", "appeal-to-authority", "false-analogy"],
+          "path_to_resolution": "Evaluate specific schools, not categories. Define what outcomes you're optimizing for."
+        },
+        {
+          "id": "where-to-live",
+          "name": "City vs Suburb vs Rural",
+          "typical_framing": "Cities are vibrant vs suburbs are soulless vs rural is isolated",
+          "why_it_persists": "Different life stages, careers, and personalities genuinely benefit from different environments.",
+          "hidden_variables": ["career requirements", "family structure", "social needs", "cost sensitivity", "lifestyle preferences"],
+          "common_fallacies": ["false-dilemma", "hasty-generalization", "ad-hominem"],
+          "path_to_resolution": "List your actual priorities. Visit and try places. Recognize it can change over time."
+        },
+        {
+          "id": "college-worth-it",
+          "name": "Is College Worth It?",
+          "typical_framing": "Degree required for success vs college is a scam",
+          "why_it_persists": "Highly field-dependent. Also conflates signaling value, learning value, and network value.",
+          "hidden_variables": ["intended career", "specific institution", "alternative paths available", "debt load", "opportunity cost"],
+          "common_fallacies": ["hasty-generalization", "false-dilemma", "correlation-causation"],
+          "path_to_resolution": "Depends entirely on field and specific school. Compare concrete alternatives."
+        },
+        {
+          "id": "kids-or-not",
+          "name": "Having Children",
+          "typical_framing": "Kids give life meaning vs kids ruin your life",
+          "why_it_persists": "Genuinely different values. Also: parents can't unknow parenthood, non-parents can't know it.",
+          "hidden_variables": ["personal values", "support systems", "financial stability", "relationship quality", "career goals"],
+          "common_fallacies": ["ad-hominem", "appeal-to-tradition", "hasty-generalization"],
+          "path_to_resolution": "Pure values question. Neither side can prove the other wrong. Respect the difference."
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "name": "Financial & Investment",
+      "description": "Money debates. Often have right answers that depend on time horizon and risk tolerance.",
+      "resolvability": "conditional",
+      "domains": [
+        {
+          "id": "active-vs-passive",
+          "name": "Active vs Passive Investing",
+          "typical_framing": "Beat the market vs just buy index funds",
+          "why_it_persists": "Survivorship bias in active success stories. Also: some people enjoy the game.",
+          "hidden_variables": ["time available", "expertise level", "tax situation", "account size", "risk tolerance"],
+          "common_fallacies": ["hasty-generalization", "correlation-causation", "appeal-to-authority"],
+          "path_to_resolution": "Data strongly favors passive for most people. Active can work but most who think they can, can't."
+        },
+        {
+          "id": "crypto",
+          "name": "Cryptocurrency Investment",
+          "typical_framing": "Future of money vs greater fool scam",
+          "why_it_persists": "Combines technology speculation, monetary theory, and tribal identity. High emotional stakes from gains/losses.",
+          "hidden_variables": ["risk tolerance", "time horizon", "regulatory environment", "use case specificity", "portfolio allocation"],
+          "common_fallacies": ["appeal-to-authority", "hasty-generalization", "ad-hominem", "false-dilemma"],
+          "path_to_resolution": "Separate technology assessment from investment thesis. Size positions to risk tolerance."
+        },
+        {
+          "id": "timing-the-market",
+          "name": "Market Timing",
+          "typical_framing": "Wait for the dip vs time in market beats timing",
+          "why_it_persists": "Feels like it should work. Hindsight makes past timing look obvious.",
+          "hidden_variables": ["transaction costs", "tax implications", "psychological factors", "information advantage"],
+          "common_fallacies": ["correlation-causation", "hasty-generalization", "appeal-to-ignorance"],
+          "path_to_resolution": "Empirically resolved: time in market wins for almost everyone. But people keep trying."
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "name": "Technology Choices",
+      "description": "Tool and platform debates. Often tribal identity masquerading as technical discussion.",
+      "resolvability": "mixed",
+      "domains": [
+        {
+          "id": "mac-vs-windows-vs-linux",
+          "name": "Mac vs Windows vs Linux",
+          "typical_framing": "Mac just works vs Windows is standard vs Linux is freedom",
+          "why_it_persists": "Genuine tradeoffs exist, but identity attachment exceeds technical differences.",
+          "hidden_variables": ["use case", "software requirements", "budget", "technical skill", "ecosystem lock-in"],
+          "common_fallacies": ["false-dilemma", "hasty-generalization", "ad-hominem"],
+          "path_to_resolution": "All three work fine. Pick based on your actual needs and software requirements."
+        },
+        {
+          "id": "programming-languages",
+          "name": "Programming Language X vs Y",
+          "typical_framing": "My language is better vs your language is trash",
+          "why_it_persists": "Familiarity breeds preference. Also: genuine tradeoffs that matter in specific contexts.",
+          "hidden_variables": ["problem domain", "team expertise", "ecosystem maturity", "performance requirements", "hiring pool"],
+          "common_fallacies": ["hasty-generalization", "false-analogy", "ad-hominem"],
+          "path_to_resolution": "Context-dependent. Most languages are fine for most things. Optimize for team and ecosystem."
+        },
+        {
+          "id": "tabs-vs-spaces",
+          "name": "Tabs vs Spaces",
+          "typical_framing": "Tabs are semantic vs spaces are precise",
+          "why_it_persists": "Low stakes + strong opinions = eternal flame war. Also accessibility arguments (tabs) vs alignment arguments (spaces).",
+          "hidden_variables": ["team convention", "language norms", "editor setup", "accessibility needs"],
+          "common_fallacies": ["false-dilemma", "appeal-to-authority"],
+          "path_to_resolution": "Pick one per project and enforce with tooling. The debate is not worth the time."
+        },
+        {
+          "id": "ai-replaces-x",
+          "name": "Will AI Replace X?",
+          "typical_framing": "AI will take all jobs vs AI is just hype",
+          "why_it_persists": "Uncertainty about the future + motivated reasoning (fear or hope) + rapid change.",
+          "hidden_variables": ["specific job tasks", "timeline", "adoption speed", "regulatory response", "human preference for humans"],
+          "common_fallacies": ["false-dilemma", "hasty-generalization", "appeal-to-authority", "correlation-causation"],
+          "path_to_resolution": "Break down into specific tasks, not whole jobs. Short-term overestimated, long-term underestimated."
+        },
+        {
+          "id": "monolith-vs-microservices",
+          "name": "Monolith vs Microservices",
+          "typical_framing": "Microservices scale vs monoliths are simpler",
+          "why_it_persists": "Resume-driven development. Also genuine tradeoffs that depend on team size and scale.",
+          "hidden_variables": ["team size", "deployment complexity tolerance", "scale requirements", "organizational structure"],
+          "common_fallacies": ["appeal-to-authority", "hasty-generalization", "false-analogy"],
+          "path_to_resolution": "Start monolith, extract services when you have clear boundaries and genuine need."
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "name": "Political & Policy",
+      "description": "Value-laden debates where people optimize for different things. Often unresolvable because the disagreement is about goals, not facts.",
+      "resolvability": "low",
+      "domains": [
+        {
+          "id": "democrat-vs-republican",
+          "name": "Democrat vs Republican",
+          "typical_framing": "Other side is evil/stupid vs my side is reasonable",
+          "why_it_persists": "Package deal identities. Disagreements about values masquerading as disagreements about facts.",
+          "hidden_variables": ["value weights (liberty vs equality vs security)", "trust in institutions", "risk tolerance", "in-group identity"],
+          "common_fallacies": ["ad-hominem", "straw-man", "false-dilemma", "hasty-generalization"],
+          "path_to_resolution": "Separate factual claims (testable) from value claims (not). Most productive: understand what the other side is optimizing for."
+        },
+        {
+          "id": "abortion",
+          "name": "Abortion Rights",
+          "typical_framing": "Bodily autonomy vs right to life",
+          "why_it_persists": "Genuinely different foundational values about personhood, rights hierarchy, and state role.",
+          "hidden_variables": ["when personhood begins (value judgment)", "relative weight of competing rights", "role of state in personal decisions"],
+          "common_fallacies": ["straw-man", "false-dilemma", "ad-hominem", "appeal-to-authority"],
+          "path_to_resolution": "Likely unresolvable at society level. Core disagreement is philosophical, not empirical."
+        },
+        {
+          "id": "gun-control",
+          "name": "Gun Control",
+          "typical_framing": "Guns kill people vs guns protect people",
+          "why_it_persists": "Mixes empirical claims (what policies reduce harm) with value claims (rights vs safety tradeoffs).",
+          "hidden_variables": ["weight of self-defense vs collective safety", "trust in state", "cultural identity", "risk assessment"],
+          "common_fallacies": ["hasty-generalization", "false-analogy", "correlation-causation", "straw-man"],
+          "path_to_resolution": "Isolate empirical questions (what works) from value questions (what tradeoffs are acceptable)."
+        },
+        {
+          "id": "climate-policy",
+          "name": "Climate Policy",
+          "typical_framing": "Existential crisis vs economic alarmism",
+          "why_it_persists": "Mixes science (what's happening) with economics (costs of action) with values (intergenerational obligations).",
+          "hidden_variables": ["discount rate for future", "trust in models", "technology optimism", "distribution of costs"],
+          "common_fallacies": ["appeal-to-authority", "ad-hominem", "false-dilemma", "straw-man"],
+          "path_to_resolution": "Separate: (1) Is it happening? (2) How bad? (3) What to do? Most disagreement is on 3, disguised as disagreement on 1."
+        }
+      ]
+    },
+    {
+      "id": "internet-classics",
+      "name": "Internet Classics",
+      "description": "Tribal markers and pure preferences that get argued like they have objective answers.",
+      "resolvability": "none",
+      "domains": [
+        {
+          "id": "ios-vs-android",
+          "name": "iOS vs Android",
+          "typical_framing": "Apple sheep vs Android fragmentation",
+          "why_it_persists": "Sunk cost (ecosystem), identity attachment, genuine but minor tradeoffs.",
+          "hidden_variables": ["ecosystem lock-in", "privacy preferences", "customization desire", "budget"],
+          "common_fallacies": ["ad-hominem", "hasty-generalization", "false-dilemma"],
+          "path_to_resolution": "Both are fine. Pick based on ecosystem and budget. Stop arguing."
+        },
+        {
+          "id": "console-wars",
+          "name": "PlayStation vs Xbox vs Nintendo vs PC",
+          "typical_framing": "My platform is superior",
+          "why_it_persists": "Sunk cost justification. Tribal identity. Children arguing, adults continuing.",
+          "hidden_variables": ["exclusive games you want", "friend group platforms", "budget", "use case"],
+          "common_fallacies": ["ad-hominem", "hasty-generalization", "appeal-to-authority"],
+          "path_to_resolution": "Buy what has the games you want. The argument is identity, not utility."
+        },
+        {
+          "id": "star-wars-vs-star-trek",
+          "name": "Star Wars vs Star Trek",
+          "typical_framing": "Space fantasy vs space philosophy",
+          "why_it_persists": "They're different genres. Comparing them is category error.",
+          "hidden_variables": ["genre preference", "which era/series", "nostalgia"],
+          "common_fallacies": ["false-analogy", "false-dilemma"],
+          "path_to_resolution": "Like both or either. They're not competing for the same niche."
+        },
+        {
+          "id": "pineapple-pizza",
+          "name": "Pineapple on Pizza",
+          "typical_framing": "Delicious vs abomination",
+          "why_it_persists": "Pure preference treated as moral stance. Performative outrage is fun.",
+          "hidden_variables": ["taste preference (literally just this)"],
+          "common_fallacies": ["appeal-to-tradition", "ad-hominem"],
+          "path_to_resolution": "Taste is subjective. There is no argument here. Eat what you like."
+        },
+        {
+          "id": "hotdog-sandwich",
+          "name": "Is a Hot Dog a Sandwich?",
+          "typical_framing": "Definitional debate",
+          "why_it_persists": "Category boundaries are fuzzy. No authority to decree definitions.",
+          "hidden_variables": ["definition of sandwich (prescriptive vs descriptive)"],
+          "common_fallacies": ["equivocation", "appeal-to-authority"],
+          "path_to_resolution": "Definitions are tools, not truths. Define terms for your context and move on."
+        },
+        {
+          "id": "vim-vs-emacs",
+          "name": "Vim vs Emacs",
+          "typical_framing": "Modal editing vs Lisp machine",
+          "why_it_persists": "Investment in learning creates attachment. Both are powerful.",
+          "hidden_variables": ["existing muscle memory", "configuration investment", "use case"],
+          "common_fallacies": ["ad-hominem", "false-dilemma", "appeal-to-authority"],
+          "path_to_resolution": "Use what you're productive in. VS Code won anyway."
+        }
+      ]
+    },
+    {
+      "id": "parenting",
+      "name": "Parenting Choices",
+      "description": "High emotional stakes + asymmetric information (only parents of that type know their experience). Judgment-heavy.",
+      "resolvability": "low",
+      "domains": [
+        {
+          "id": "screen-time",
+          "name": "Kids and Screen Time",
+          "typical_framing": "Screens are poison vs screens are fine",
+          "why_it_persists": "Research is mixed. Parents defending their choices. Guilt and judgment.",
+          "hidden_variables": ["content type", "child's age", "alternative activities available", "parental bandwidth"],
+          "common_fallacies": ["hasty-generalization", "correlation-causation", "appeal-to-authority"],
+          "path_to_resolution": "Nuance: content and context matter more than raw time. Research is evolving."
+        },
+        {
+          "id": "breastfeeding",
+          "name": "Breastfeeding Duration",
+          "typical_framing": "Breast is best vs fed is best",
+          "why_it_persists": "Identity, guilt, judgment. Benefits real but overstated in discourse.",
+          "hidden_variables": ["mother's health", "supply issues", "work constraints", "mental health"],
+          "common_fallacies": ["hasty-generalization", "appeal-to-authority", "ad-hominem"],
+          "path_to_resolution": "Benefits exist but are modest. Support mothers' choices without judgment."
+        },
+        {
+          "id": "discipline-style",
+          "name": "Discipline Approaches",
+          "typical_framing": "Gentle parenting vs kids need boundaries",
+          "why_it_persists": "Different values (autonomy vs structure). Also: people confuse approaches with implementations.",
+          "hidden_variables": ["child temperament", "parent temperament", "cultural context", "support systems"],
+          "common_fallacies": ["straw-man", "hasty-generalization", "false-dilemma"],
+          "path_to_resolution": "Most approaches work when applied consistently with love. Extremes fail."
+        }
+      ]
+    },
+    {
+      "id": "health-lifestyle",
+      "name": "Health & Lifestyle",
+      "description": "Personal experience weighted heavily. Science often unclear or evolving. Strong identity components.",
+      "resolvability": "mixed",
+      "domains": [
+        {
+          "id": "diet-wars",
+          "name": "Diet Wars (Keto vs Vegan vs Carnivore vs...)",
+          "typical_framing": "My diet is optimal vs your diet is harmful",
+          "why_it_persists": "Individual variation is real. Confirmation bias from personal results. Identity attachment.",
+          "hidden_variables": ["individual metabolism", "food preferences", "ethical values", "social context", "adherence ability"],
+          "common_fallacies": ["hasty-generalization", "correlation-causation", "appeal-to-authority", "ad-hominem"],
+          "path_to_resolution": "Most diets work for weight loss if followed. Long-term health is less clear. Individual variation matters."
+        },
+        {
+          "id": "exercise-approaches",
+          "name": "Exercise Modalities",
+          "typical_framing": "Cardio vs lifting vs HIIT vs yoga",
+          "why_it_persists": "All work. People defend their investment. Fitness influencer economy.",
+          "hidden_variables": ["goals", "enjoyment", "time available", "injury history", "age"],
+          "common_fallacies": ["false-dilemma", "hasty-generalization", "appeal-to-authority"],
+          "path_to_resolution": "Best exercise is one you'll do consistently. Mix modalities for overall health."
+        },
+        {
+          "id": "work-life-balance",
+          "name": "Work-Life Balance / Hustle Culture",
+          "typical_framing": "Grind to succeed vs work to live",
+          "why_it_persists": "Different values. Survivorship bias from successful grinders. Also: circumstances differ wildly.",
+          "hidden_variables": ["career stage", "financial needs", "family situation", "industry norms", "personal values"],
+          "common_fallacies": ["hasty-generalization", "correlation-causation", "appeal-to-authority"],
+          "path_to_resolution": "Depends on goals, stage, and values. Neither extreme is universally right."
+        }
+      ]
+    }
+  ],
+  "unresolvable_patterns": {
+    "description": "Why certain arguments never reach resolution",
+    "patterns": [
+      {
+        "id": "pure-preference",
+        "name": "Pure Preference",
+        "description": "No objective answer exists—it's just taste.",
+        "examples": ["pineapple on pizza", "favorite color", "music genres"],
+        "signal": "Argument uses 'better' or 'worse' for subjective experiences",
+        "resolution": "Acknowledge subjectivity. 'I prefer X' not 'X is better.'"
+      },
+      {
+        "id": "values-based",
+        "name": "Values-Based",
+        "description": "Disagreement is about what to optimize for, not facts.",
+        "examples": ["abortion", "liberty vs equality tradeoffs", "individual vs collective"],
+        "signal": "Both sides have internally consistent logic but different premises",
+        "resolution": "Surface the value difference. You likely won't resolve it but can understand it."
+      },
+      {
+        "id": "context-dependent",
+        "name": "Context-Dependent",
+        "description": "Right answer varies by situation, but people argue as if universal.",
+        "examples": ["rent vs buy", "college worth it", "startup vs big company"],
+        "signal": "Answer starts with 'it depends' but argument ignores that",
+        "resolution": "Identify the variables. Run analysis for specific situation."
+      },
+      {
+        "id": "unfalsifiable",
+        "name": "Unfalsifiable",
+        "description": "Claims cannot be tested or proven wrong in principle.",
+        "examples": ["religious debates", "simulation theory", "hard problem of consciousness"],
+        "signal": "No conceivable evidence would change either side's mind",
+        "resolution": "Acknowledge the epistemic limits. May not be worth arguing."
+      },
+      {
+        "id": "identity-tribal",
+        "name": "Identity/Tribal",
+        "description": "Position is group membership marker, not truth-seeking.",
+        "examples": ["console wars", "political party loyalty", "sports teams"],
+        "signal": "Defending position feels like defending self. Attacks feel personal.",
+        "resolution": "Recognize when you're defending identity vs seeking truth. Disengage or reframe."
+      },
+      {
+        "id": "asymmetric-information",
+        "name": "Asymmetric Information",
+        "description": "People arguing from genuinely different experiences that can't be shared.",
+        "examples": ["parenting debates (parents vs non-parents)", "chronic illness discussions", "privilege debates"],
+        "signal": "One side says 'you can't understand unless you've experienced it'",
+        "resolution": "Acknowledge experiential gaps. Listen more, argue less."
+      }
+    ]
+  }
+}
